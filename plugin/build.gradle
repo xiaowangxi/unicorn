@@ -1,0 +1,20 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    //gradle sdk
+    implementation gradleApi()
+    //groovy sdk
+    implementation localGroovy()
+
+    implementation 'com.android.tools.build:gradle:3.5.0'
+    //ASM相关依赖
+
+    implementation 'org.ow2.asm:asm:8.0'
+    implementation 'org.ow2.asm:asm-tree:8.0'
+    implementation 'org.ow2.asm:asm-util:8.0'
+    implementation 'org.ow2.asm:asm-analysis:8.0'
+    implementation 'org.ow2.asm:asm-commons:8.0'
+
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.27'
+}

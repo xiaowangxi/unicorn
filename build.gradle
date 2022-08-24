@@ -1,0 +1,33 @@
+buildscript {
+    apply from: 'config.gradle'
+    apply from: 'repos.gradle'
+
+    addMavenRepositories(repositories)
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:3.5.3"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            cacheChangingModulesFor 0, 'seconds'
+        }
+    }
+}
+
+apply from: 'config.gradle'
+apply from: 'repos.gradle'
+
+allprojects {
+    addMavenRepositories(repositories)
+
+    configurations.all {
+        resolutionStrategy {
+            cacheChangingModulesFor 0, 'seconds'
+        }
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

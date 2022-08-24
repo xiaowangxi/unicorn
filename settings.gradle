@@ -1,0 +1,3 @@
+rootProject.name = "unicorn"
+include ':app'
+include ':plugin'

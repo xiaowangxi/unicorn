@@ -1,0 +1,14 @@
+def addMavenRepositories(RepositoryHandler handler) {
+    //handler.maven { url "https://maven.google.com" }
+    handler.maven { url "https://maven.aliyun.com/repository/google" }
+    handler.maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
+    handler.maven { url 'https://oss.sonatype.org/content/groups/staging' }
+    handler.maven { url "https://jitpack.io" }
+    handler.maven { url 'http://developer.huawei.com/repo/' }
+//    handler.maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+    handler.mavenCentral()
+    handler.google()
+    handler.jcenter()
+}
+
+ext.addMavenRepositories = this.&addMavenRepositories
